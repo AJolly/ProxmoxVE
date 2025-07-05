@@ -127,7 +127,7 @@ if [[ "${install_prompt,,}" =~ ^(y|yes)$ ]]; then
         filebrowser config set -a '0.0.0.0' -p "$PORT" -d "$DB_PATH" &>/dev/null
         filebrowser config init --auth.method=noauth &>/dev/null
         filebrowser config set --auth.method=noauth &>/dev/null
-        filebrowser users add ID 1 --perm.admin &>/dev/null
+        filebrowser users add admin helper-scripts.com --perm.admin --database "$DB_PATH" &>/dev/null
         msg_ok "No Authentication configured"
     else
         msg_info "Setting up default authentication"
